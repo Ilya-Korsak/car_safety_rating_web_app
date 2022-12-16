@@ -24,7 +24,7 @@ export default function About() {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+          Compare cars
         </Typography>
         <Box maxWidth="sm">
         <Button variant="contained" component={Link} noLinkStyle href="/">

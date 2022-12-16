@@ -24,7 +24,6 @@ This web app builded with:
 
 - [Next.js] - To make app alive
 - [Material-ui] - UI tools and components
-- [Tailwindcss] - Maki life with stylea a bit easier
 - [Redux-toolkit] - State container
 - [node.js] - evented I/O for the backend
 
@@ -67,7 +66,6 @@ MIT
    [Next.js]: <https://nextjs.org/>
    [Material-ui]: <https://mui.com/>
    [Redux-toolkit]: <https://redux-toolkit.js.org>
-   [tailwindcss]: <https://tailwindcss.com/>
    [markdown-it]: <https://github.com/markdown-it/markdown-it>
    [node.js]: <http://nodejs.org>
 

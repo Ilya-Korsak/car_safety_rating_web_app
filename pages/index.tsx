@@ -2,9 +2,9 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from '../components/Link';
-import ProTip from '../components/ProTip';
-import Copyright from '../components/Copyright';
+import Link from '../components/from_template/Link';
+import ProTip from '../components/from_template/ProTip';
+import Copyright from '../components/from_template/Copyright';
 
 export default function Home() {
   return (

@@ -11,7 +11,7 @@ import Copyright from '../../components/from_template/Copyright';
         <NextLink href="/" passHref >
           <Button>Go Back</Button>
           </NextLink> */
-export default function About() {
+export default function Cars() {
   return (
     <Container maxWidth="lg">
       <Box
@@ -21,10 +21,11 @@ export default function About() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
+          height:'80%'
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+          CARS and Recalls
         </Typography>
         <Box maxWidth="sm">
         <Button variant="contained" component={Link} noLinkStyle href="/">
