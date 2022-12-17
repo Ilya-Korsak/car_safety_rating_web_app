@@ -27,36 +27,34 @@ export default function MyApp(props: MyAppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
-      <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-      }}
-    >
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <ResponsiveAppBar />
-        <Component {...pageProps} />
         <Box
-        component="footer"
-        sx={{
-          py: 3,
-          px: 2,
-          mt: 'auto',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
-        }}
-      >
-        <Container maxWidth="sm">
-          <Typography variant="body1">
-            My sticky footer can be found here.
-          </Typography>
-        </Container>
-      </Box>
-      </Box>
+        minHeight='100vh'
+        display='flex'
+        flexDirection='column'
+        >
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <ResponsiveAppBar />
+          <Box flex={2} overflow='auto' >
+            <Component {...pageProps} />
+          </Box>
+          <Box
+            component="footer"
+            bgcolor={(theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[200]
+                : theme.palette.grey[800]}
+            py={3}
+            px={2}
+            mt='auto'
+          >
+            <Container maxWidth="sm">
+              <Typography variant="body1">
+                My sticky footer can be found here.
+              </Typography>
+            </Container>
+          </Box>
+        </Box>
       </ThemeProvider>
     </CacheProvider>
   );

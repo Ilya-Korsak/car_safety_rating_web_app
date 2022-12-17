@@ -18,14 +18,17 @@ Here ig going to be small project description and features
 > this app does't made for some production purpose
 > this is just an API usage example
 
-## Tech
+## Resources
 
-This web app builded with:
+This web app builded using:
 
 - [Next.js] - To make app alive
 - [Material-ui] - UI tools and components
 - [Redux-toolkit] - State container
 - [node.js] - evented I/O for the backend
+- [Flaticon] - free icons
+- [Firebase] - used just for hosting
+- [NHTSA] - data source
 
 ## Installation
 
@@ -68,5 +71,8 @@ MIT
    [Redux-toolkit]: <https://redux-toolkit.js.org>
    [markdown-it]: <https://github.com/markdown-it/markdown-it>
    [node.js]: <http://nodejs.org>
+   [Flaticon]: <https://www.flaticon.com/free-icons/searcher>
+   [Firebase]: <https://firebase.google.com/>
+   [NHTSA]: <https://www.nhtsa.gov/>
 
    [PlDb]: <https://www.nhtsa.gov/nhtsa-datasets-and-apis>

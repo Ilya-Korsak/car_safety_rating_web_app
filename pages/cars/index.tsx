@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import SearchCard from '../../components/search_components/SearchCard';
 import Paper from '@mui/material/Paper';
 import CarList from '../../components/search_components/CarList';
+import SearchListPlaceholder from '../../components/search_components/SearchListPlaceholder';
 /*
         <NextLink href="/" passHref >
           <Button>Go Back</Button>
@@ -30,23 +31,26 @@ export default function Cars() {
         sx={{
           my: 4,
           flexGrow: 1,
-          height: '80%',
           width: '100%',
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
           CARS and CARS
         </Typography>
-        <Box sx={{ flexGrow: 1,
-          my: 4 }}>
+        <Box sx={{
+          flexGrow: 1,
+          my: 4
+        }}>
           <Grid container spacing={2}
-          
-          justifyContent="center">
+
+            justifyContent="center">
             <Grid item xs="auto" >
-              <SearchCard/>
+              <SearchCard />
             </Grid>
             <Grid item xs >
-              <CarList/>
+              {
+                <SearchListPlaceholder />//<CarList/>
+              }
             </Grid>
           </Grid>
         </Box>

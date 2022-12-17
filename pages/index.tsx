@@ -10,6 +10,8 @@ export default function Home() {
   return (
     <Container maxWidth="lg">
       <Box
+      bgcolor={'red'}
+      height='100%'
         sx={{
           my: 4,
           display: 'flex',
@@ -24,9 +26,10 @@ export default function Home() {
         <Link href="/about" color="secondary">
           Go to the about page
         </Link>
+        <a href="https://www.flaticon.com/free-icons/searcher" title="searcher icons">Searcher icons created by Freepik - Flaticon</a>
         <ProTip />
         <Copyright />
       </Box>
-    </Container>
+      </Container>
   );
 };

@@ -11,47 +11,43 @@ import { Paper } from '@mui/material';
 import CarCard from '../CarCard';
 
 export default function AlignItemsList() {
-    return (
-        <Box style={{ 
-                
-        minWidth:350,
-        maxWidth:800,
-                overflow: 'auto'}}>
-  <List>
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-                <Divider variant="inset" component="li" />
-                        <CarCard/>
-            </List>
-        </Box>
-    );
+        return (
+                <Box overflow={'auto'} minWidth={350} maxWidth={800}>
+                        <List>
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                                <Divider variant="inset" component="li" />
+                                <CarCard />
+                        </List>
+                </Box>
+        );
 }

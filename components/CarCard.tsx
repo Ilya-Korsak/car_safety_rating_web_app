@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
+import { Button } from '@mui/material';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -15,7 +16,6 @@ const Img = styled('img')({
 export default function ComplexGrid() {
   return (
     <Paper
-    
       sx={{
         p: 2,
         margin: 2,
@@ -24,8 +24,8 @@ export default function ComplexGrid() {
           theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
       }}
     >
-     
- <Grid container spacing={2}>
+
+      <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>
             <Img alt="complex" src="/static/images/grid/complex.jpg" />
@@ -45,9 +45,18 @@ export default function ComplexGrid() {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                Remove
-              </Typography>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <Button variant="outlined" color="success">
+                    Add
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="error">
+                    Remove
+                  </Button>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
           <Grid item>
