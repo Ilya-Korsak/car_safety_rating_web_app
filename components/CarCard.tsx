@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-import { Button } from '@mui/material';
+import { Button, Grid, Paper, Typography, ButtonBase } from '@mui/material';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -13,7 +9,7 @@ const Img = styled('img')({
   maxHeight: '100%',
 });
 
-export default function ComplexGrid() {
+export default function CarInfoCard() {
   return (
     <Paper
       sx={{
@@ -24,7 +20,6 @@ export default function ComplexGrid() {
           theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
       }}
     >
-
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>

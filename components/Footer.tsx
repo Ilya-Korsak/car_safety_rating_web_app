@@ -1,19 +1,23 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
+import { Container, Typography, Box } from '@mui/material';
 
-export default function SimplePaper() {
-    return (
-        <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height:'5%'
-        }}
-      >
-
+export default function SimpleFooter() {
+  return (
+    <Box
+      component="footer"
+      bgcolor={(theme) =>
+        theme.palette.mode === 'light'
+          ? theme.palette.grey[200]
+          : theme.palette.grey[800]}
+      py={3}
+      px={2}
+      mt='auto'
+    >
+      <Container maxWidth="sm">
+        <Typography variant="body1">
+          My sticky footer can be found here.
+        </Typography>
+      </Container>
     </Box>
-    );
-  }
+  );
+}
