@@ -14,26 +14,30 @@ export default function handler(
   const {
     query,
     method,
-  } = req
-
+  } = req;
   console.log(query);
+  let year = query.year?.toString();
+  let make = query.make?.toString();
   let data:string = '';
-  https.get('https://api.nhtsa.gov/SafetyRatings/modelyear/2013/make/Acura/model/rdx', (resp: IncomingMessage) => {
+
+  https.get(`https://api.nhtsa.gov/products/vehicle/models?modelYear=${year}&make=${make}&issueType=c`, (resp: IncomingMessage) => {
     
 
     // A chunk of data has been received.
     resp.on('data', (chunk: any) => {
       data += chunk.toString();
-      console.log(data);
     });
 
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
-      console.log(data);
-      res.status(200).json({ text: JSON.parse(data)});
+      const avaiaibleModels = JSON.parse(data).results.map(({model}: any)=>({
+          Model: model
+      }))
+    res.status(200).json({ text: avaiaibleModels});
     });
 
   }).on("error", (err) => {
+    
     console.log("Error: " + err.message);
   });
 }
