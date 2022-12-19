@@ -10,6 +10,8 @@ import theme from '../styles/theme';
 import createEmotionCache from '../lib/createEmotionCache';
 import ResponsiveAppBar from '../components/Header';
 import Footer from '../components/Footer';
+import { store } from '../redux/store'
+import { Provider } from 'react-redux'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -23,6 +25,7 @@ interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
+    <Provider store={store}>
     <CacheProvider value={emotionCache}>
       <Head>
         <title>Car safety ranking</title>
@@ -44,5 +47,6 @@ export default function MyApp(props: MyAppProps) {
         </Box>
       </ThemeProvider>
     </CacheProvider>
+    </Provider>
   );
 }
