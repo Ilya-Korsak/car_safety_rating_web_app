@@ -6,7 +6,7 @@ import Link from './from_template/Link';
 import { useRouter } from 'next/router'
 import ThemeSwitch from './ThemeSwitch';
 import { useAppDispatch } from '../redux/hooks';
-import { FilterQuery, RequestType, toRequestType } from '../interfaces';
+import { FilterQuery, RequestType } from '../interfaces';
 import { fetchYears, resetState } from '../redux/slices/filterSlice';
 
 const pages: RequestType[] = [RequestType.RATINGS, RequestType.RECALLS];
