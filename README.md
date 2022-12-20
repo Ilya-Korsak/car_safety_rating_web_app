@@ -2,18 +2,17 @@
 ## _it's just a practice in next.js and react, nothing cool here :D_
 
 Deployed on:
-[![N|Solid](https://miro.medium.com/max/650/1*5n0uJ3CTF8MiKJJhNkNJMA.png)](https://car-safety-rating.web.app/)
+[![N|Solid](https://www.drupal.org/files/styles/grid-3-2x/public/project-images/vercel-deploy.png?itok=AyGlptNc)](https://car-safety-rating.vercel.app/)
 
 
 Here ig going to be small project description and features
 
 ## Features
 
-- 1st feature
-- 2nd
-- 3rd
-- 4th
-- ...
+- List all cars avaiable on US market
+- Vehicles safety ratings
+- Ьanufacturer recalls
+- User's complaints
 
 > this app does't made for some production purpose
 > this is just an API usage example
@@ -27,7 +26,8 @@ This web app builded using:
 - [Redux-toolkit] - State container
 - [node.js] - evented I/O for the backend
 - [Flaticon] - free icons
-- [Firebase] - used just for hosting
+- [Vercel] - used just for hosting
+- [ImaginStudio] - vehicle pictures CDN
 - [NHTSA] - data source
 
 ## Installation
@@ -72,7 +72,8 @@ MIT
    [markdown-it]: <https://github.com/markdown-it/markdown-it>
    [node.js]: <http://nodejs.org>
    [Flaticon]: <https://www.flaticon.com/free-icons/searcher>
-   [Firebase]: <https://firebase.google.com/>
+   [Vercel]: <https://vercel.com//>
    [NHTSA]: <https://www.nhtsa.gov/>
+   [ImaginStudio]: <https://www.imagin.studio/>
 
    [PlDb]: <https://www.nhtsa.gov/nhtsa-datasets-and-apis>
