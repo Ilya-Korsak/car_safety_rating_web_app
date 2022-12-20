@@ -24,7 +24,7 @@ import ComplaintCard from '../ComplaintCard';
     else{
         return (
             <List>
-                {data?.map((complaintMessage)=><ComplaintCard {...complaintMessage}/>)}
+                {data?.map((complaintMessage)=><ComplaintCard key={complaintMessage.odiNumber+complaintMessage.dateOfIncident} {...complaintMessage}/>)}
             </List>
         )
     }

@@ -23,7 +23,7 @@ import RecallCard from '../RecallCard';
     else{
         return (
             <List>
-                {data?.map((recallMessage)=><RecallCard {...recallMessage}/>)}
+                {data?.map((recallMessage)=><RecallCard key={recallMessage.NHTSACampaignNumber} {...recallMessage}/>)}
             </List>
         )
     }
