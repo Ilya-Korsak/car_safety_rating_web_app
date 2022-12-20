@@ -16,7 +16,6 @@ export default function handler(
     method,
   } = req
 
-  console.log(query);
   let data:string = '';
   https.get('https://api.nhtsa.gov/SafetyRatings/modelyear/2013/make/Acura/model/rdx', (resp: IncomingMessage) => {
     
@@ -24,16 +23,14 @@ export default function handler(
     // A chunk of data has been received.
     resp.on('data', (chunk: any) => {
       data += chunk.toString();
-      console.log(data);
     });
 
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
-      console.log(data);
       res.status(200).json({ text: JSON.parse(data)});
     });
 
   }).on("error", (err) => {
-    console.log("Error: " + err.message);
+    console.error("Error: " + err.message);
   });
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import Image from 'next/image';
 import { Button, Grid, Paper, Typography, ButtonBase } from '@mui/material';
 
 const Img = styled('img')({
@@ -9,7 +10,15 @@ const Img = styled('img')({
   maxHeight: '100%',
 });
 
-export default function CarInfoCard() {
+type CarInfoCardProps = {
+  make: string,
+  model: string,
+  id: string,
+  modification: string,
+  children: React.ReactNode
+};
+
+const CarInfoCard: React.FC<CarInfoCardProps> = ({ make, id, children, model, modification }) => {
   return (
     <Paper
       sx={{
@@ -23,40 +32,26 @@ export default function CarInfoCard() {
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>
-            <Img alt="complex" src="/static/images/grid/complex.jpg" />
+            {children}
           </ButtonBase>
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Typography gutterBottom variant="subtitle1" component="div">
-                Standard license
+                {make}
               </Typography>
               <Typography variant="body2" gutterBottom>
-                Full resolution 1920x1080 • JPEG
+                {modification}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                ID: 1030114
+                ID: {id}
               </Typography>
-            </Grid>
-            <Grid item>
-              <Grid container spacing={2}>
-                <Grid item>
-                  <Button variant="outlined" color="success">
-                    Add
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="error">
-                    Remove
-                  </Button>
-                </Grid>
-              </Grid>
             </Grid>
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" component="div">
-              $19.00
+              {model}
             </Typography>
           </Grid>
         </Grid>
@@ -64,3 +59,4 @@ export default function CarInfoCard() {
     </Paper>
   );
 }
+export default CarInfoCard;

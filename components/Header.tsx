@@ -5,32 +5,42 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Link from './from_template/Link';
 import { useRouter } from 'next/router'
 import ThemeSwitch from './ThemeSwitch';
+import { useAppDispatch } from '../redux/hooks';
+import { FilterQuery, RequestType, toRequestType } from '../interfaces';
+import { fetchYears, resetState } from '../redux/slices/filterSlice';
 
-const pages = ['cars', 'recalls'];
-const settings = ['Go to comparator', 'Clear'];
+const pages: RequestType[] = [RequestType.RATINGS, RequestType.RECALLS];
 
 function ResponsiveAppBar() {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
-  const handleCloseNavMenu = (e: React.MouseEvent, page: string) => {
+  const handleChooseNavMenu = (e: React.MouseEvent, page: RequestType) => {
     e.preventDefault();
-    console.log(page);
     setAnchorElNav(null);
 
     router.push(`/${page}`);
+    if (Object.values(RequestType).includes(page)) {
+      const filterQuery: FilterQuery = {
+        mode: page,
+        year: "",
+        make: "",
+        model: "",
+      }
+      dispatch(fetchYears(filterQuery));
+    }
+    else {
+      dispatch(resetState());
+    }
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
   };
 
   return (
@@ -88,7 +98,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={(e) => {
-                  handleCloseNavMenu(e, page);
+                  handleChooseNavMenu(e, page);
                 }}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
@@ -115,11 +125,11 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page: RequestType) => (
               <Button
                 key={page}
                 onClick={(e) => {
-                  handleCloseNavMenu(e, page);
+                  handleChooseNavMenu(e, page);
                 }}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
@@ -130,35 +140,6 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <ThemeSwitch />
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Compare tool">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>

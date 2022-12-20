@@ -6,15 +6,17 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 type ItemSelectorProps = {
   data: string[],
-  label: string
+  label: string,
+  callBack: (data:string)=>void
 };
 
-const ItemSelector: React.FC<ItemSelectorProps> = ({ data, label }) => {
+const ItemSelector: React.FC<ItemSelectorProps> = ({ data, label, callBack }) => {
   const [itemName, setItemName] = React.useState('');
   const handleChange = (event: SelectChangeEvent) => {
+    callBack(event.target.value as string);
     setItemName(event.target.value as string);
   };
-
+console.log(data);
   return (
     <FormControl fullWidth>
       <InputLabel id="demo-simple-select-label">{label}</InputLabel>
@@ -25,7 +27,7 @@ const ItemSelector: React.FC<ItemSelectorProps> = ({ data, label }) => {
         label={label}
         onChange={handleChange}
       >
-        {data.map((item)=><MenuItem value={item}>{item}</MenuItem>)}
+        {data?.map((item, index)=><MenuItem key={label+item+index} value={item}>{item}</MenuItem>)}
       </Select>
     </FormControl>
   );

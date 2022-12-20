@@ -15,7 +15,6 @@ export default function handler(
     query,
     method,
   } = req;
-  console.log(query);
   let year = query.year?.toString();
   let make = query.make?.toString();
   let data:string = '';
@@ -38,6 +37,6 @@ export default function handler(
 
   }).on("error", (err) => {
     
-    console.log("Error: " + err.message);
+    console.error("Error: " + err.message);
   });
 }

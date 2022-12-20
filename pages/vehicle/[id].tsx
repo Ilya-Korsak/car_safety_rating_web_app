@@ -56,7 +56,7 @@ export default function VehicleInfoPage() {
             Safety info
           </Typography>
         </Box>
-        <CarCard />
+        {/*<CarCard />*/}
         <Box
           margin={2}
           height={400}>

@@ -1,13 +1,15 @@
 import type { FC, ReactElement } from 'react'
 import { Container, Typography, Box, Grid } from '@mui/material';
 import SearchCard from './SearchCard';
+import { FilterActions } from '../../interfaces';
 
 type SearchLayoutProps = {
   name: String,
   children: React.ReactNode,
+  filterActions: FilterActions
 };
-
-const SearchLayout: FC<SearchLayoutProps> = ({ children, name }) => {
+//PROPERTY DRILL - HELL YEAH!!!!
+const SearchLayout: FC<SearchLayoutProps> = ({ children, name, filterActions }) => {
   return (
     <Container maxWidth="lg">
       <Box my={4} flexGrow={1} width='100%'>
@@ -17,7 +19,7 @@ const SearchLayout: FC<SearchLayoutProps> = ({ children, name }) => {
         <Box flexGrow = {1} my = {4}>
           <Grid container spacing={2} justifyContent="center">
             <Grid item xs="auto" >
-              <SearchCard />
+              <SearchCard filterActions={filterActions}/>
             </Grid>
             <Grid item xs >
               {children}

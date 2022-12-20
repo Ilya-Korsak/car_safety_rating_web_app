@@ -24,12 +24,10 @@ export default function handler(
     // A chunk of data has been received.
     resp.on('data', (chunk: any) => {
       data += chunk.toString();
-      console.log(data);
     });
 
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
-      console.log(data);
       const avaiaibleMakes = JSON.parse(data).Results.map(({Make}: any)=>({
           Make
       }))
@@ -38,6 +36,6 @@ export default function handler(
 
   }).on("error", (err) => {
     
-    console.log("Error: " + err.message);
+    console.error("Error: " + err.message);
   });
 }

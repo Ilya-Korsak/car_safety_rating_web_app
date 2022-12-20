@@ -15,7 +15,6 @@ export default function handler(
     query,
     method,
   } = req;
-  console.log(query);
   let id = query.id?.toString();
   let data:string = '';
 
@@ -29,13 +28,12 @@ export default function handler(
 
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
-        console.log(data);
       const avaiaibleModifications = JSON.parse(data).Results
     res.status(200).json({ text: avaiaibleModifications});
     });
 
   }).on("error", (err) => {
     
-    console.log("Error: " + err.message);
+    console.error("Error: " + err.message);
   });
 }

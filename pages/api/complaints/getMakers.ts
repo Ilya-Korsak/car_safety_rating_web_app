@@ -36,6 +36,6 @@ export default function handler(
 
   }).on("error", (err) => {
     
-    console.log("Error: " + err.message);
+    console.error("Error: " + err.message);
   });
 }
