@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MenuItem, Tooltip, Button, Avatar, Container, Menu, Typography, IconButton, AppBar, Box, Toolbar, } from '@mui/material';
-import AdbIcon from '@mui/icons-material/Adb';
+import CarCrashTwoToneIcon from '@mui/icons-material/CarCrashTwoTone';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from './from_template/Link';
 import { useRouter } from 'next/router'
@@ -47,7 +47,7 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <CarCrashTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -64,7 +64,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            CarSafetyRating
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -105,7 +105,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <CarCrashTwoToneIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -122,7 +122,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            CarSafetyRating
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page: RequestType) => (
@@ -138,9 +138,9 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/*<Box sx={{ flexGrow: 0 }}>
             <ThemeSwitch />
-          </Box>
+              </Box>*/}
         </Toolbar>
       </Container>
     </AppBar>

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
 import { Button, Grid, Paper, Typography, ButtonBase } from '@mui/material';
+import Link from './from_template/Link';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -31,9 +32,11 @@ const CarInfoCard: React.FC<CarInfoCardProps> = ({ make, id, children, model, mo
     >
       <Grid container spacing={2}>
         <Grid item>
-          <ButtonBase sx={{ width: 128, height: 128 }}>
+          <Button sx={{ width: 128, height: 128 }}
+          component={Link} noLinkStyle href={`/vehicle/${id}`}
+          >
             {children}
-          </ButtonBase>
+          </Button>
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>
